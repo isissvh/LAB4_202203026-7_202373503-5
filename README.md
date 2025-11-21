@@ -52,12 +52,41 @@ La función collatz se implementó de forma recursiva con la siguiente estructur
   
   Finalmente, se retorna con jr ra, dejando en **a0** el número **total de pasos** que tarda el n original en llegar a 1.
 
-  **Instrucciones de compilación y ejecución**
-    - Abrir RARS y el archivo subsistema1.asm
-    - Ensamblar con Run → Assemble (o F3)
-    - Ejecutar con Run → Go (o F5) y usar la ventana Run I/O para ingresar:
-        - Primero, la cantidad de IDs (5–20).
-        - Luego, cada ID cuando el programa lo solicite.
+
+## Desafio 2
+el subsistema implementa una validación secuencial en tres capas. Si una capa falla, el programa termina inmediatamente informando el error.
+
+1.  Capa 1 (Análisis de Composición):
+   - Algoritmo: Se recorre el arreglo de bytes linealmente usando un bucle simple.
+   - Estructura: Se utilizan 4 registros contadores independientes.
+   - Lógica: Se verifican rangos ASCII para Mayúsculas, Minúsculas y Dígitos. Para los caracteres 
+     especiales, dada su dispersión en la tabla ASCII, se comparan individualmente contra el conjunto permitido.
+     
+2. Capa 2 (Paridad Posicional):
+   - Algoritmo: Se implementa mediante bucles anidados. El bucle externo itera sobre los 4 bloques y 
+     el interno suma los valores ASCII de los caracteres.
+   - Lógica: Se verifica la paridad usando operaciones a nivel de bits (AND con 1). Se requiere un contador 
+     de bloques válidos >= 3.
+     
+3. Capa 3 (Código Hash):
+   - Algoritmo: Implementación iterativa de la fórmula `hash = (hash * 31 + ASCII) % 65536`.
+   - Optimización Aritmética: Debido a las restricciones del set de instrucciones (ver supuestos), 
+     se reemplazaron las operaciones complejas por desplazamientos lógicos (shifts).
+
+
+-----------------------------------------------------------------------
+# INSTRUCCIONES DE COMPILACIÓN Y EJECUCIÓN (RARS)
+-----------------------------------------------------------------------
+
+Para ambos subsistemas:
+1. Abrir el simulador RARS.
+2. Abrir el archivo correspondiente (`subsistema1.asm` o `subsistema2.asm`).
+3. Ensamblar el código presionando F3 (o el icono de la llave inglesa/destornillador).
+4. Ejecutar presionando F5 (o el botón Play verde).
+
+Entradas requeridas:
+- Subsistema 1: Ingresar primero la cantidad de IDs (n) y luego los n números enteros en la consola.
+- Subsistema 2: Ingresar una cadena de caracteres de largo 16 cuando la consola lo solicite.
 
 ---
 # Notas
