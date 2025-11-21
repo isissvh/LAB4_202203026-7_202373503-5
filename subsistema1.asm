@@ -23,7 +23,7 @@ ids: .space 80
 
 main:
 
-   		la   a0, cant
+   	la   a0, cant
     	li   a7, 4
     	ecall
 
@@ -31,10 +31,10 @@ main:
     	ecall
     
     	li t3, 5
-		blt a0, t3, error
+	blt a0, t3, error
  
-		li t3, 21
-		bge a0, t3, error
+	li t3, 21
+	bge a0, t3, error
     
     	mv   s0, a0
     
@@ -52,10 +52,10 @@ loop:
     	ecall
     	
     	li t3, 10
-		blt a0, t3, error
+	blt a0, t3, error
  
-		li t3, 1001
-		bge a0, t3, error
+	li t3, 1001
+	bge a0, t3, error
 
     	mv   s1, a0
     
@@ -92,7 +92,7 @@ loop:
     	bge t2,t0, es_l
     
     	li t0, 50
-   		bge t2,t0, es_o
+   	bge t2,t0, es_o
     
     	li t0, 20
     	bge t2,t0, es_i
@@ -141,7 +141,7 @@ collatz_end:
     	jr   ra
 
 es_l:
-		la   a0, msg_rango
+	la   a0, msg_rango
     	li   a7, 4
     	ecall
     	la   a0, lider
@@ -150,7 +150,7 @@ es_l:
     	j continue
     
 es_i:
-		la   a0, msg_rango
+	la   a0, msg_rango
     	li   a7, 4
     	ecall
     	la   a0, informante
@@ -159,16 +159,16 @@ es_i:
     	j continue
 
 es_o:
-		la   a0, msg_rango
+	la   a0, msg_rango
     	li   a7, 4
     	ecall
-		la   a0, operador
-		li   a7, 4
-		ecall
-		j continue
+	la   a0, operador
+	li   a7, 4
+	ecall
+	j continue
 
 es_p:
-		la   a0, msg_rango
+	la   a0, msg_rango
     	li   a7, 4
     	ecall
     	la   a0, peon
@@ -189,12 +189,12 @@ continue:
     	j    loop
     	
 error:
-		la   a0, msg_error      
-   		li   a7, 4             
+	la   a0, msg_error      
+   	li   a7, 4             
     	ecall
     	
     	la   a0, salto
-		li   a7, 4
-		ecall
+	li   a7, 4
+	ecall
 	
     	j main
