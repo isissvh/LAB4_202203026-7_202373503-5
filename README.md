@@ -17,7 +17,6 @@ ByteMaster descubrió que la organización criminal usa un sistema de encriptaci
 en la Secuencia de Collatz modificada para ocultar los rangos de sus miembros. El objetivo es lograr decifrar sus rangos!
 ---
 # Desarrollo
-
 ## Desafio 1
 
 La función collatz se implementó de forma recursiva con la siguiente estructura:
@@ -53,8 +52,14 @@ La función collatz se implementó de forma recursiva con la siguiente estructur
   
   Finalmente, se retorna con jr ra, dejando en **a0** el número **total de pasos** que tarda el n original en llegar a 1.
 
----
+  **Instrucciones de compilación y ejecución**
+    - Abrir RARS y el archivo subsistema1.asm
+    - Ensamblar con Run → Assemble (o F3)
+    - Ejecutar con Run → Go (o F5) y usar la ventana Run I/O para ingresar:
+        - Primero, la cantidad de IDs (5–20).
+        - Luego, cada ID cuando el programa lo solicite.
 
+---
 # Notas
 
 - En desafío 1 se incorporaron los errores en caso de salir de los rangos de valores, al ocurrir, se reinicia todo el sistema.
