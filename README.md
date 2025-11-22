@@ -92,4 +92,5 @@ Entradas requeridas:
 # Notas
 
 - En desafío 1 se incorporaron los errores en caso de salir de los rangos de valores, al ocurrir, se reinicia todo el sistema.
+- En desafío 1 se asume que la salida es tal como en el pdf, que no incluye el paso a paso de cada 'transición'.
 - En desafío 2 al ingresar una clave diferente a 16 dígitos, se rechaza automáticamente.
